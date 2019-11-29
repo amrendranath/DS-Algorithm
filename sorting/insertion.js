@@ -1,23 +1,23 @@
-/**
- * @param {number[]} arr Unsorted array 
- * @return {number[]} sorted array (ascending)
- */
-function insertionSort(arr) {
-    for (let index = 1; index < arr.length; index += 1) {
-        let key = arr[index];
-        let j = index - 1;
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j = j - 1;
+class InsertionSort {
+    sort(originalArray) {
+        const array = [...originalArray];
+        for (let index = 1; index <= array.length; index += 1) {
+            let currentIndex = index;
+            while (currentIndex >= 0 && array[currentIndex] < array[currentIndex - 1]) {
+                const temp = array[currentIndex];
+                array[currentIndex] = array[currentIndex - 1];
+                array[currentIndex - 1] = temp;
+
+                currentIndex -= 1
+            }
         }
-        arr[j + 1] = key;
+        return array;
     }
-    return arr;
 }
 
-const arr = [5, 2, 4, 6, 1, 3,31, 41, 59, 26, 41, 58];
+const arr = [5, 2, 4, 6, 1, 3, 31, 41, 59, 26, 41, 58];
 console.log("BEFORE: ", arr);
 console.time();
-const result = insertionSort(arr);
+const result = new InsertionSort();
 console.timeEnd();
-console.log("AFTER: ", result);
+console.log("AFTER: ", result.sort(arr));
