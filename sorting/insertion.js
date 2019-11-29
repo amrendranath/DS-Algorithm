@@ -19,5 +19,5 @@ const arr = [5, 2, 4, 6, 1, 3, 31, 41, 59, 26, 41, 58];
 console.log("BEFORE: ", arr);
 console.time();
 const result = new InsertionSort();
-console.timeEnd();
 console.log("AFTER: ", result.sort(arr));
+console.timeEnd();
