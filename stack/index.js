@@ -12,8 +12,7 @@ class Stack {
     if (this.isEmpty()) {
       return "underflow";
     }
-    this.items.pop();
-    return this;
+    return this.items.pop();
   }
 
   isEmpty() {
@@ -32,31 +31,33 @@ class Stack {
   }
 }
 
-// creating object for stack class
-const stack = new Stack();
+module.exports = Stack;
 
-// testing isEmpty and pop on an empty stack
+// // creating object for stack class
+// const stack = new Stack();
 
-// returns false
-console.log(stack.isEmpty());
+// // testing isEmpty and pop on an empty stack
 
-// returns Underflow
-console.log(stack.pop());
+// // returns false
+// console.log(stack.isEmpty());
 
-// Adding element to the stack
-stack.push(10);
-stack.push(20);
-stack.push(30);
+// // returns Underflow
+// console.log(stack.pop());
 
-// Printing the stack element
-// prints [10, 20, 30]
-console.log(stack.printStack());
+// // Adding element to the stack
+// stack.push(10);
+// stack.push(20);
+// stack.push(30);
 
-// returns 30
-console.log(stack.peek());
+// // Printing the stack element
+// // prints [10, 20, 30]
+// console.log(stack.printStack());
 
-// returns 30 and remove it from stack
-console.log(stack.pop());
+// // returns 30
+// console.log(stack.peek());
 
-// returns [10, 20]
-console.log(stack.printStack());
+// // returns 30 and remove it from stack
+// console.log(stack.pop());
+
+// // returns [10, 20]
+// console.log(stack.printStack());
